@@ -1,43 +1,85 @@
 var sacha = {
-  nombre: 'Sacha',
-  apellido: 'Lifszyc',
-  altura: 1.72
+  name: 'Sacha',
+  lastName: 'Lifszyc',
+  height: 1.72,
+  books: 82
 }
 
 var alan = {
-  nombre: 'Alan',
-  apellido: 'Perez',
-  altura: 1.86
+  name: 'Alan',
+  lastName: 'Perez',
+  height: 1.86,
+  books: 12
 }
 
 var martin = {
-  nombre: 'Martin',
-  apellido: 'Gomez',
-  altura: 1.85
+  name: 'Martin',
+  lastName: 'Gomez',
+  height: 1.85,
+  books: 100
 }
 
 var dario = {
-  nombre: 'Dario',
-  apellido: 'Juarez',
-  altura: 1.71
+  name: 'Dario',
+  lastName: 'Juarez',
+  height: 1.71,
+  books: 54
 }
 
 var vicky = {
-  nombre: 'Vicky',
-  apellido: 'Zapata',
-  altura: 1.56
+  name: 'Vicky',
+  lastName: 'Zapata',
+  height: 1.56,
+  books: 20
 }
 
 var paula = {
-  nombre: 'Paula',
-  apellido: 'Barros',
-  altura: 1.76
+  name: 'Paula',
+  lastName: 'Barros',
+  height: 1.76,
+  books: 32
 }
 
-var personas = [ sacha, alan, martin, dario, vicky, paula ]
+var persons = [ sacha, alan, martin, dario, vicky, paula ]
 
-// for (let i = 0; i < personas.length; i++) {
-//   var persona = personas[i]
-//   console.log(`${persona.nombre} mide ${persona.altura}`)
+// for (let i = 0; i < persons.length; i++) {
+//   var persona = persons[i]
+//   console.log(`${persona.name} mide ${persona.height}`)
 // }
-personas.map(item => console.log(`${item.nombre} mide ${item.altura}`))
+persons.map(item => console.log(`${item.name} mide ${item.height}`))
+
+// Filtrar un array
+const tallPerson = person => person.height > 1.8
+const smallPerson = ({ height }) => height < 1.8
+
+console.log(persons.filter(tallPerson))
+console.log(persons.filter(smallPerson))
+
+// Transformar un array (.map)
+const heightToCms = (person) => {
+  // Modifica el array original
+  // person.height *= 100
+  // return person
+
+  // Crea un nuevo array sin modificar el original
+  return {
+    ...person,
+    height: person.height * 100
+  }
+}
+var asd = persons.map(heightToCms)
+
+// Reducir un array
+
+// var acum = 0;
+// for (var i= 0; i < persons.length; i++) {
+//   acum = acum + persons[i].books
+// }
+// console.log(`En total todos tienen ${acum} libros`)
+
+const reducer = (acum, { books }) => acum + books
+
+var booksTotal = persons.reduce(reducer, 0)
+
+console.log(`En total todos tienen ${booksTotal} libros`)
+
