@@ -1,3 +1,4 @@
+//Herencia prototipal, no existe herencia de clases como tal
 function Person(name, lastName, height) {
   this.name = name
   this.lastName = lastName
@@ -14,9 +15,3 @@ Person.prototype.soyAlto = function () {
 
 var paola = new Person('Paola', 'Vargas', '1.58')
 var tonito = new Person('Tigre', 'Toñito', '1.82')
-
-paola.saludar()
-paola.soyAlto()
-
-tonito.saludar()
-tonito.soyAlto()
