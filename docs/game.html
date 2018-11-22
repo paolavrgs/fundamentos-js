@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Dice</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Simon dice</h1>
+      <span>Memory Game</span>
+    </div>
+    <div class="gameboard">
+      <div id="blue" class="color blue left" data-color="blue"></div>
+      <div id="purple" class="color purple right" data-color="purple"></div>
+      <div id="orange" class="color orange left" data-color="orange"></div>
+      <div id="green" class="color green right" data-color="green"></div>
+      <button id="btnStart" class="btn-start" onclick="gameStart()">Start to play</button>
+    </div>
+    <div class="footer">
+        <span>made by @paolavrgs</span>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
