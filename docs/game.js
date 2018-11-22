@@ -13,7 +13,7 @@ class Game {
     this.init = this.init.bind(this)
     this.init()
     this.sequence()
-    this.nextLevel()
+    setTimeout(this.nextLevel, 500)
   }
 
   init() {
